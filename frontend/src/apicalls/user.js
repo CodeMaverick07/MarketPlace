@@ -4,7 +4,7 @@ import { message } from "antd";
 export const RegisterUser = async (payload) => {
   try {
     const response = await axiosInstance.post(
-      "http://localhost:3000/api/user/register",
+      "https://market-place-ashen.vercel.app/api/user/register",
       payload
     );
     return response.data;
@@ -16,7 +16,7 @@ export const RegisterUser = async (payload) => {
 export const LoginUser = async (payload) => {
   try {
     const response = await axiosInstance.post(
-      "http://localhost:3000/api/user/login",
+      "https://market-place-ashen.vercel.app/api/user/login",
       payload
     );
     return response.data;
@@ -28,7 +28,7 @@ export const LoginUser = async (payload) => {
 export const GetCurrentUser = async () => {
   try {
     const response = await axiosInstance.get(
-      "http://localhost:3000/api/user/get-current-user"
+      "https://market-place-ashen.vercel.app/api/user/get-current-user"
     );
     return response.data;
   } catch (error) {
@@ -39,7 +39,7 @@ export const GetCurrentUser = async () => {
 export const GetAllUsers = async () => {
   try {
     const response = await axiosInstance.get(
-      "http://localhost:3000/api/user/get-all-users"
+      "https://market-place-ashen.vercel.app/api/user/get-all-users"
     );
     return response.data;
   } catch (error) {
@@ -50,7 +50,7 @@ export const GetAllUsers = async () => {
 export const UpdateUserStatus = async (id, status) => {
   try {
     const response = await axiosInstance.put(
-      `http://localhost:3000/api/user/update-user-status/${id}`,
+      `https://market-place-ashen.vercel.app/api/user/update-user-status/${id}`,
       { status }
     );
     return response.data;
