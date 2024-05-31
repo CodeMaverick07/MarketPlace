@@ -4,7 +4,14 @@ const cors = require("cors");
 const app = express();
 app.use(express.json());
 require("dotenv").config();
-app.use(cors());
+
+const allowedOrigin = "https://market-place-d5i1.vercel.app";
+
+const corsOptions = {
+  origin: allowedOrigin,
+  optionsSuccessStatus: 200, // Some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+app.use(cors(corsOptions));
 
 const port = process.env.PORT || 3000;
 
