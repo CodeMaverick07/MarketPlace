@@ -4,7 +4,7 @@ import { axiosInstance } from "./axiosInstance.js";
 export const AddNotification = async (data) => {
   try {
     const response = await axiosInstance.post(
-      "http://localhost:3000/api/notification/notify",
+      "https://market-place-ashen.vercel.app/api/notification/notify",
       data
     );
     return response.data;
@@ -17,7 +17,7 @@ export const AddNotification = async (data) => {
 export const GetAllNotifications = async () => {
   try {
     const response = await axiosInstance.get(
-      "http://localhost:3000/api/notification/get-all-notification"
+      "https://market-place-ashen.vercel.app/api/notification/get-all-notification"
     );
     return response.data;
   } catch (error) {
@@ -29,7 +29,7 @@ export const GetAllNotifications = async () => {
 export const DeleteNotification = async (id) => {
   try {
     const response = await axiosInstance.delete(
-      `http://localhost:3000/api/notification/delete-notification/${id}`
+      `https://market-place-ashen.vercel.app/api/notification/delete-notification/${id}`
     );
     return response.data;
   } catch (error) {
@@ -41,7 +41,7 @@ export const DeleteNotification = async (id) => {
 export const ReadAllNotifications = async () => {
   try {
     const response = await axiosInstance.put(
-      "http://localhost:3000/api/notification/read-all-notifications"
+      "https://market-place-ashen.vercel.app/api/notification/read-all-notifications"
     );
     return response.data;
   } catch (error) {

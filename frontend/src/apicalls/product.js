@@ -4,7 +4,7 @@ import { message } from "antd";
 export const AddProduct = async (payload) => {
   try {
     const response = await axiosInstance.post(
-      "http://localhost:3000/api/product/add-product",
+      "https://market-place-ashen.vercel.app/api/product/add-product",
       payload
     );
     return response.data;
@@ -16,7 +16,7 @@ export const AddProduct = async (payload) => {
 export const GetProducts = async (filters) => {
   try {
     const response = await axiosInstance.post(
-      "http://localhost:3000/api/product/get-products",
+      "https://market-place-ashen.vercel.app/api/product/get-products",
       filters
     );
     return response.data;
@@ -28,7 +28,7 @@ export const GetProducts = async (filters) => {
 export const UpdateProduct = async (id, payload) => {
   try {
     const response = await axiosInstance.put(
-      `http://localhost:3000/api/product/edit-product/${id}`,
+      `https://market-place-ashen.vercel.app/api/product/edit-product/${id}`,
       payload
     );
     return response.data;
@@ -40,7 +40,7 @@ export const UpdateProduct = async (id, payload) => {
 export const DeleteProduct = async (id) => {
   try {
     const response = await axiosInstance.delete(
-      `http://localhost:3000/api/product/delete-product/${id}`
+      `https://market-place-ashen.vercel.app/api/product/delete-product/${id}`
     );
     return response.data;
   } catch (error) {
@@ -51,7 +51,7 @@ export const DeleteProduct = async (id) => {
 export const UploadProductImage = async (payload) => {
   try {
     const response = await axiosInstance.post(
-      "http://localhost:3000/api/product/upload-product-image",
+      "https://market-place-ashen.vercel.app/api/product/upload-product-image",
       payload
     );
     return response.data;
@@ -63,7 +63,7 @@ export const UploadProductImage = async (payload) => {
 export const UpdateProductStatus = async (id, status) => {
   try {
     const response = await axiosInstance.put(
-      `http://localhost:3000/api/product/update-product-status/${id}`,
+      `https://market-place-ashen.vercel.app/api/product/update-product-status/${id}`,
       { status }
     );
     return response.data;
@@ -75,7 +75,7 @@ export const UpdateProductStatus = async (id, status) => {
 export const DeleteProductImage = async (id, url) => {
   try {
     const response = await axiosInstance.put(
-      `http://localhost:3000/api/product/delete-product-image/${id}`,
+      `https://market-place-ashen.vercel.app/api/product/delete-product-image/${id}`,
       { url }
     );
     return response.data;
@@ -87,7 +87,7 @@ export const DeleteProductImage = async (id, url) => {
 export const GetProductById = async (id) => {
   try {
     const response = await axiosInstance.get(
-      `http://localhost:3000/api/product/get-product-by-id/${id}`
+      `https://market-place-ashen.vercel.app/api/product/get-product-by-id/${id}`
     );
     return response.data;
   } catch (error) {
@@ -98,7 +98,7 @@ export const GetProductById = async (id) => {
 export const PlaceNewBid = async (payload) => {
   try {
     const response = await axiosInstance.post(
-      "http://localhost:3000/api/bid/place-new-bid",
+      "https://market-place-ashen.vercel.app/api/bid/place-new-bid",
       payload
     );
     return response.data;
@@ -110,7 +110,7 @@ export const PlaceNewBid = async (payload) => {
 export const GetAllBids = async (filters) => {
   try {
     const response = await axiosInstance.post(
-      "http://localhost:3000/api/bid/get-all-bids",
+      "https://market-place-ashen.vercel.app/api/bid/get-all-bids",
       filters
     );
     return response.data;
