@@ -40,10 +40,12 @@ router.post("/add-product", authMiddleware, async (req, res) => {
 router.post("/get-products", authMiddleware, async (req, res) => {
   try {
     connectToDatabase();
-    const { status, category = [], age = [] } = req.body;
+    const { seller, status, category = [], age = [] } = req.body;
     console.log(req.body);
     let filters = {};
-
+    if (seller) {
+      filters.seller = seller;
+    }
     if (status) {
       filters.status = status;
     }
