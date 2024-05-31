@@ -54,7 +54,7 @@ const Home = () => {
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
       getSearchedData();
-    }, 1000);
+    }, 500);
     //clear timeout
     return () => clearTimeout(delayDebounceFn);
   }, [search]);
