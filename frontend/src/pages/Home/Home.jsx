@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { GetProducts } from "../../apicalls/product";
+import { GetProducts, SearchProduct } from "../../apicalls/product";
 import { message } from "antd";
 import { setLoader } from "../../redux/loadersSlice";
 import Divider from "../../components/Divider";
@@ -10,6 +10,7 @@ import { FaBars } from "react-icons/fa";
 
 const Home = () => {
   const navigate = useNavigate();
+  const [search, setSearch] = useState("");
   const [showFilters, setShowFilters] = useState(false);
   const [products, setProducts] = useState([]);
   const [filters, setFilters] = useState({
@@ -19,6 +20,21 @@ const Home = () => {
   });
 
   const dispatch = useDispatch();
+  const getSearchedData = async () => {
+    try {
+      dispatch(setLoader(true));
+      const response = await SearchProduct(search);
+      dispatch(setLoader(false));
+      if (response.success) {
+        setProducts(response.data);
+      } else {
+        console.log(response.message);
+      }
+    } catch (error) {
+      dispatch(setLoader(false));
+      console.log(error.message);
+    }
+  };
   const getData = async () => {
     try {
       dispatch(setLoader(true));
@@ -34,6 +50,15 @@ const Home = () => {
       message.error(error.message);
     }
   };
+  //lazy search products in useEffect
+  useEffect(() => {
+    const delayDebounceFn = setTimeout(() => {
+      getSearchedData();
+    }, 1000);
+    //clear timeout
+    return () => clearTimeout(delayDebounceFn);
+  }, [search]);
+
   useEffect(() => {
     getData();
   }, [filters]);
@@ -60,6 +85,8 @@ const Home = () => {
             )}
             <input
               type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
               placeholder="search products here..."
               className="border border-gray-300 rounded border-solid w-full p-2"
             />

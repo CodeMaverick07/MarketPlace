@@ -206,4 +206,30 @@ router.get("/get-product-by-id/:id", authMiddleware, async (req, res) => {
   }
 });
 
+//search Product by name and description
+router.post("/search-product", authMiddleware, async (req, res) => {
+  try {
+    connectToDatabase();
+    const { payload } = req.body;
+    console.log(payload);
+
+    const products = await Product.find({
+      $or: [
+        { name: { $regex: payload, $options: "i" } },
+        { description: { $regex: payload, $options: "i" } },
+      ],
+    }).populate("seller");
+
+    res.send({
+      success: true,
+      data: products,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+});
+
 module.exports = router;

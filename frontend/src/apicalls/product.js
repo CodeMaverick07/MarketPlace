@@ -118,3 +118,17 @@ export const GetAllBids = async (filters) => {
     message.error(error.message);
   }
 };
+
+//search product by name and description
+
+export const SearchProduct = async (payload) => {
+  try {
+    const response = await axiosInstance.post(
+      "https://market-place-ashen.vercel.app/api/product/search-product",
+      { payload }
+    );
+    return response.data;
+  } catch (error) {
+    message.error(error.message);
+  }
+};
