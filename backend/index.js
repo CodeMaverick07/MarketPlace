@@ -17,6 +17,7 @@ app.use("/api/user", userRoute);
 app.use("/api/product", productRoute);
 app.use("/api/bid", bidRoute);
 app.use("/api/notification", notificationRoute);
+app.get("/", (req, res) => res.send("Welcome to Auction API"));
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
