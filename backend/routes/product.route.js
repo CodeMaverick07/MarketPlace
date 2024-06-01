@@ -40,7 +40,7 @@ router.post("/add-product", authMiddleware, async (req, res) => {
 router.post("/get-products", authMiddleware, async (req, res) => {
   try {
     connectToDatabase();
-    const { seller, status = "approved", category = [], age = [] } = req.body;
+    const { seller, status, category = [], age = [] } = req.body;
     console.log(req.body);
     let filters = {};
     if (seller) {
@@ -215,6 +215,7 @@ router.post("/search-product", authMiddleware, async (req, res) => {
 
     const products = await Product.find({
       $or: [
+        { status: "approved" },
         { name: { $regex: payload, $options: "i" } },
         { description: { $regex: payload, $options: "i" } },
       ],
