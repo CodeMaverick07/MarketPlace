@@ -214,8 +214,8 @@ router.post("/search-product", authMiddleware, async (req, res) => {
     console.log(payload);
 
     const products = await Product.find({
+      status: "approved",
       $or: [
-        { status: "approved" },
         { name: { $regex: payload, $options: "i" } },
         { description: { $regex: payload, $options: "i" } },
       ],
