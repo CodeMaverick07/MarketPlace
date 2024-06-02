@@ -83,7 +83,7 @@ export const DeleteProductImage = async (id, url) => {
     message.error(error.message);
   }
 };
-
+//get product by id
 export const GetProductById = async (id) => {
   try {
     const response = await axiosInstance.get(
