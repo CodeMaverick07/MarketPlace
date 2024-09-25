@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 require("dotenv").config();
 
-const allowedOrigin = "https://market-place-d5i1.vercel.app";
+const allowedOrigin = "https://marketplace.hemantjatal.me";
 
 const corsOptions = {
   origin: allowedOrigin,
