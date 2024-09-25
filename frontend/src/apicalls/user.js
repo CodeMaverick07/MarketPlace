@@ -4,7 +4,7 @@ import { message } from "antd";
 export const RegisterUser = async (payload) => {
   try {
     const response = await axiosInstance.post(
-      "http://ec2-13-53-89-142.eu-north-1.compute.amazonaws.com:3000/api/user/register",
+      "https://marketplacebackend.hemantjatal.me/api/user/register",
       payload
     );
     return response.data;
@@ -16,7 +16,7 @@ export const RegisterUser = async (payload) => {
 export const LoginUser = async (payload) => {
   try {
     const response = await axiosInstance.post(
-      "http://ec2-13-53-89-142.eu-north-1.compute.amazonaws.com:3000/api/user/login",
+      "https://marketplacebackend.hemantjatal.me/api/user/login",
       payload
     );
     return response.data;
@@ -28,7 +28,7 @@ export const LoginUser = async (payload) => {
 export const GetCurrentUser = async () => {
   try {
     const response = await axiosInstance.get(
-      "http://ec2-13-53-89-142.eu-north-1.compute.amazonaws.com:3000/api/user/get-current-user"
+      "https://marketplacebackend.hemantjatal.me/api/user/get-current-user"
     );
     return response.data;
   } catch (error) {
@@ -39,7 +39,7 @@ export const GetCurrentUser = async () => {
 export const GetAllUsers = async () => {
   try {
     const response = await axiosInstance.get(
-      "http://ec2-13-53-89-142.eu-north-1.compute.amazonaws.com:3000/api/user/get-all-users"
+      "https://marketplacebackend.hemantjatal.me/api/user/get-all-users"
     );
     return response.data;
   } catch (error) {
@@ -50,7 +50,7 @@ export const GetAllUsers = async () => {
 export const UpdateUserStatus = async (id, status) => {
   try {
     const response = await axiosInstance.put(
-      `http://ec2-13-53-89-142.eu-north-1.compute.amazonaws.com:3000/api/user/update-user-status/${id}`,
+      `https://marketplacebackend.hemantjatal.me/api/user/update-user-status/${id}`,
       { status }
     );
     return response.data;
