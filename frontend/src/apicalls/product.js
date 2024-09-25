@@ -4,7 +4,7 @@ import { message } from "antd";
 export const AddProduct = async (payload) => {
   try {
     const response = await axiosInstance.post(
-      "http://ec2-13-53-89-142.eu-north-1.compute.amazonaws.com:3000/api/product/add-product",
+      "https://marketplacebackend.hemantjatal.me/api/product/add-product",
       payload
     );
     return response.data;
@@ -16,7 +16,7 @@ export const AddProduct = async (payload) => {
 export const GetProducts = async (filters) => {
   try {
     const response = await axiosInstance.post(
-      "http://ec2-13-53-89-142.eu-north-1.compute.amazonaws.com:3000/api/product/get-products",
+      "https://marketplacebackend.hemantjatal.me/api/product/get-products",
       filters
     );
     return response.data;
@@ -28,7 +28,7 @@ export const GetProducts = async (filters) => {
 export const UpdateProduct = async (id, payload) => {
   try {
     const response = await axiosInstance.put(
-      `http://ec2-13-53-89-142.eu-north-1.compute.amazonaws.com:3000/api/product/edit-product/${id}`,
+      `https://marketplacebackend.hemantjatal.me/api/product/edit-product/${id}`,
       payload
     );
     return response.data;
@@ -40,7 +40,7 @@ export const UpdateProduct = async (id, payload) => {
 export const DeleteProduct = async (id) => {
   try {
     const response = await axiosInstance.delete(
-      `http://ec2-13-53-89-142.eu-north-1.compute.amazonaws.com:3000/api/product/delete-product/${id}`
+      `https://marketplacebackend.hemantjatal.me/api/product/delete-product/${id}`
     );
     return response.data;
   } catch (error) {
@@ -51,7 +51,7 @@ export const DeleteProduct = async (id) => {
 export const UploadProductImage = async (payload) => {
   try {
     const response = await axiosInstance.post(
-      "http://ec2-13-53-89-142.eu-north-1.compute.amazonaws.com:3000/api/product/upload-product-image",
+      "https://marketplacebackend.hemantjatal.me/api/product/upload-product-image",
       payload
     );
     return response.data;
@@ -63,7 +63,7 @@ export const UploadProductImage = async (payload) => {
 export const UpdateProductStatus = async (id, status) => {
   try {
     const response = await axiosInstance.put(
-      `http://ec2-13-53-89-142.eu-north-1.compute.amazonaws.com:3000/api/product/update-product-status/${id}`,
+      `https://marketplacebackend.hemantjatal.me/api/product/update-product-status/${id}`,
       { status }
     );
     return response.data;
@@ -75,7 +75,7 @@ export const UpdateProductStatus = async (id, status) => {
 export const DeleteProductImage = async (id, url) => {
   try {
     const response = await axiosInstance.put(
-      `http://ec2-13-53-89-142.eu-north-1.compute.amazonaws.com:3000/api/product/delete-product-image/${id}`,
+      `https://marketplacebackend.hemantjatal.me/api/product/delete-product-image/${id}`,
       { url }
     );
     return response.data;
@@ -87,7 +87,7 @@ export const DeleteProductImage = async (id, url) => {
 export const GetProductById = async (id) => {
   try {
     const response = await axiosInstance.get(
-      `http://ec2-13-53-89-142.eu-north-1.compute.amazonaws.com:3000/api/product/get-product-by-id/${id}`
+      `https://marketplacebackend.hemantjatal.me/api/product/get-product-by-id/${id}`
     );
     return response.data;
   } catch (error) {
@@ -98,7 +98,7 @@ export const GetProductById = async (id) => {
 export const PlaceNewBid = async (payload) => {
   try {
     const response = await axiosInstance.post(
-      "http://ec2-13-53-89-142.eu-north-1.compute.amazonaws.com:3000/api/bid/place-new-bid",
+      "https://marketplacebackend.hemantjatal.me/api/bid/place-new-bid",
       payload
     );
     return response.data;
@@ -110,7 +110,7 @@ export const PlaceNewBid = async (payload) => {
 export const GetAllBids = async (filters) => {
   try {
     const response = await axiosInstance.post(
-      "http://ec2-13-53-89-142.eu-north-1.compute.amazonaws.com:3000/api/bid/get-all-bids",
+      "https://marketplacebackend.hemantjatal.me/api/bid/get-all-bids",
       filters
     );
     return response.data;
@@ -124,7 +124,7 @@ export const GetAllBids = async (filters) => {
 export const SearchProduct = async (payload) => {
   try {
     const response = await axiosInstance.post(
-      "http://ec2-13-53-89-142.eu-north-1.compute.amazonaws.com:3000/api/product/search-product",
+      "https://marketplacebackend.hemantjatal.me/api/product/search-product",
       { payload }
     );
     return response.data;
