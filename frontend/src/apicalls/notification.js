@@ -4,7 +4,7 @@ import { axiosInstance } from "./axiosInstance.js";
 export const AddNotification = async (data) => {
   try {
     const response = await axiosInstance.post(
-      "https://marketplacebackend.hemantjatal.me/api/notification/notify",
+      "http://ec2-13-53-89-142.eu-north-1.compute.amazonaws.com:3000/api/notification/notify",
       data
     );
     return response.data;
@@ -17,7 +17,7 @@ export const AddNotification = async (data) => {
 export const GetAllNotifications = async () => {
   try {
     const response = await axiosInstance.get(
-      "https://marketplacebackend.hemantjatal.me/api/notification/get-all-notification"
+      "http://ec2-13-53-89-142.eu-north-1.compute.amazonaws.com:3000/api/notification/get-all-notification"
     );
     return response.data;
   } catch (error) {
@@ -29,7 +29,7 @@ export const GetAllNotifications = async () => {
 export const DeleteNotification = async (id) => {
   try {
     const response = await axiosInstance.delete(
-      `https://marketplacebackend.hemantjatal.me/api/notification/delete-notification/${id}`
+      `http://ec2-13-53-89-142.eu-north-1.compute.amazonaws.com:3000/api/notification/delete-notification/${id}`
     );
     return response.data;
   } catch (error) {
@@ -41,7 +41,7 @@ export const DeleteNotification = async (id) => {
 export const ReadAllNotifications = async () => {
   try {
     const response = await axiosInstance.put(
-      "https://marketplacebackend.hemantjatal.me/api/notification/read-all-notifications"
+      "http://ec2-13-53-89-142.eu-north-1.compute.amazonaws.com:3000/api/notification/read-all-notifications"
     );
     return response.data;
   } catch (error) {
